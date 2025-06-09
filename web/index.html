@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexelink 首頁</title>
+  <style>
+    /* 背景動畫 */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #25E9DC, #1F68EC, #000000);
+      background-size: 300% 300%;
+      animation: bgFlow 18s ease infinite;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Navbar 模組 */
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 40px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #25E9DC;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+      padding: 6px 8px;
+    }
+
+    .nav-links a:hover::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #25E9DC, #1F68EC, #25E9DC);
+      animation: glow 2s linear infinite;
+    }
+
+    @keyframes glow {
+      0% { background-position: 0% }
+      100% { background-position: 200% }
+    }
+
+    /* Hero 區塊 */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #25E9DC, #1F68EC);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .hero button {
+      margin-top: 30px;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #25E9DC, #1F68EC);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(37, 233, 220, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .hero button:hover {
+      transform: scale(1.05);
+    }
+
+    /* 卡片區 */
+    .section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 25px rgba(37, 233, 220, 0.15);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 40px rgba(37, 233, 220, 0.6);
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #25E9DC;
+    }
+
+    /* 關於區塊 */
+    .about {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    /* Footer 模組 */
+    footer {
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+
+    body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(37, 233, 220, 0.15),
+    transparent 60%
+  );
+  transition: background 0.1s;
+  z-index: 998;
+}
+
+
+    /* 流星背景 */
+    .meteor-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .meteor {
+        position: absolute;
+        width: 2px;
+        height: 100px;
+        background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(37, 233, 220, 0.3),
+        transparent 30%
+        );
+
+    }
+
+@keyframes meteor-fall {
+  0% {
+    transform: translateY(-150px) translateX(0) rotate(45deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) translateX(200px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+#mouse-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 233, 220, 0.2) 0%, transparent 80%);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  z-index: 999;
+}
+
+.image-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 40px 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s;
+  box-shadow: 0 0 10px rgba(37, 233, 220, 0.1);
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(37, 233, 220, 0.4);
+}
+
+/* ===== 滑鼠邊緣光暈 ===== */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 998;
+  background: radial-gradient(
+    circle at var(--mouse-x, 1%) var(--mouse-y, 1%),
+    rgb(4, 252, 66),
+    transparent 1%
+  );
+  transition: background 0.1s ease;
+}
+
+/* ===== RGB 燈條邊框 ===== */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: 4px solid;
+  border-image: linear-gradient(135deg, red, orange, yellow, green, cyan, blue, violet, red) 1;
+  border-radius: 10px;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 999;
+  animation: borderRGB 3s linear infinite;
+}
+
+/* RGB 光條動畫 */
+@keyframes borderRGB {
+  0% {
+    border-image-source: linear-gradient(0deg, red, orange, yellow, green, cyan, blue, violet, red);
+  }
+  25% {
+    border-image-source: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
+  }
+  50% {
+    border-image-source: linear-gradient(180deg, red, orange, yellow, green, cyan, blue, violet, red);
+  }
+  75% {
+    border-image-source: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+  }
+  100% {
+    border-image-source: linear-gradient(360deg, red, orange, yellow, green, cyan, blue, violet, red);
+  }
+}
+
+
+@keyframes rgbMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+
+  </style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<script>
+  fetch("/workspaces/nexelink-web/file/nav.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    });
+</script>
+
+  <section class="hero">
+    <h1>用科技，串連創意</h1>
+    <p>Nexelink 是您品牌數位轉型的最佳夥伴，提供網站開發、設計、影像與互動內容服務。</p>
+    <button>立即洽詢</button>
+  </section>
+
+  <section class="section" id="services">
+    <h2 class="section-title">我們的服務</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>網站開發</h3>
+        <p>從個人品牌到企業官網，響應式、互動式網站全面支援。</p>
+        <li><a href="/web/services/website.html">前往了解</a></li>
+      </div>
+      <div class="card">
+        <h3>平面設計</h3>
+        <p>LOGO、名片、包裝等一站式設計解決方案。</p>
+        <li><a href="/web/services/design.html">前往了解</a></li>
+      </div>
+      <div class="card">
+        <h3>影片剪輯</h3>
+        <p>行銷影片、品牌形象、社群影音製作，專業又有感。</p>
+        <li><a href="/web/services/video.html">前往了解</a></li>
+      </div>
+      <div class="card">
+        <h3>Nexelink Game</h3>
+        <p>2D 科技復古遊戲平台，跨平台互動與創作發表。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2 class="section-title">關於我們</h2>
+    <div class="about">
+      Nexelink 是一間致力於數位創新與跨媒體創作的科技公司，
+      我們相信「科技是創意的舞台」，融合工程與藝術，打造出每一個令人驚豔的體驗。
+    </div>
+  </section>
+
+  <footer id="contact">
+    © 2025 Nexelink 數位創新團隊 ｜ contact@nexelink.tw
+  </footer>
+
+<script>
+    // 滑鼠底光追蹤
+document.addEventListener("mousemove", function (e) {
+  const x = (e.clientX / window.innerWidth) * 100;
+  const y = (e.clientY / window.innerHeight) * 100;
+  document.body.style.setProperty("--mouse-x", `${x}%`);
+  document.body.style.setProperty("--mouse-y", `${y}%`);
+});
+
+
+// 產生隨機流星
+const layer = document.getElementById("meteor-layer");
+for (let i = 0; i < 20; i++) {
+  const meteor = document.createElement("div");
+  meteor.classList.add("meteor");
+  meteor.style.left = `${Math.random() * window.innerWidth}px`;
+  meteor.style.animationDelay = `${Math.random() * 5}s`;
+  layer.appendChild(meteor);
+}
+
+
+</script>
+
+  <div class="meteor-layer" id="meteor-layer"></div>
+  <div id="mouse-glow"></div>
+
+<!-- RGB 燈條邊框 -->
+<div class="rainbow-border rainbow-top"></div>
+<div class="rainbow-border rainbow-bottom"></div>
+<div class="rainbow-border rainbow-left"></div>
+<div class="rainbow-border rainbow-right"></div>
+
+  <!-- 其他內容 -->
+
+</body>
+</html>
