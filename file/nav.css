@@ -1,0 +1,76 @@
+/* assets/css/common.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(ellipse at bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+/* 浮動動畫 */
+.float-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.float-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar 樣式 */
+.navbar {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: #00ffff;
+}
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Footer 樣式 */
+.site-footer {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+#stars-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #0f2027, #203a43, #2c5364); /* 銀河夜空底色 */
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服務總覽｜Nexelink</title>
+
+  <!-- ✅ 共用樣式 -->
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- 星空背景 -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- 導覽列 -->
+  <div id="nav-placeholder"></div>
+
+  <!-- 主內容 -->
+  <main>
+    <section class="float-up">
+      <h1>我們的五大服務</h1>
+      <p>從視覺到技術，從創意到執行，Nexelink 提供完整的數位創意整合解決方案。</p>
+    </section>
+
+    <section class="float-up">
+      <h2>🔧 網站開發</h2>
+      <p>量身打造企業形象網站、商城、後台系統，支援響應式設計與 SEO 優化。</p>
+      <a href="services/web.html"><button>進入選配</button></a>
+    </section>
+
+    <section class="float-up">
+      <h2>🎬 影片剪輯</h2>
+      <p>從腳本、拍攝到剪輯，呈現有節奏、有風格、有溫度的動態影像。</p>
+      <a href="services/video.html"><button>進入選配</button></a>
+    </section>
+
+    <section class="float-up">
+      <h2>🎨 平面設計</h2>
+      <p>商業視覺設計、品牌識別、印刷品排版，助你建立第一眼印象。</p>
+      <a href="services/design.html"><button>進入選配</button></a>
+    </section>
+
+    <section class="float-up">
+      <h2>🎮 遊戲開發</h2>
+      <p>製作互動式小遊戲、教育模擬或完整平台，支援 HTML5 與 Unity。</p>
+      <a href="services/game.html"><button>進入選配</button></a>
+    </section>
+
+    <section class="float-up">
+      <h2>🎵 音樂創作</h2>
+      <p>創作專屬主題音樂、節目配樂、Podcast 開頭曲，原創製作，完整授權。</p>
+      <a href="services/music.html"><button>進入選配</button></a>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 共用腳本 -->
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/footer.js"></script>
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/stars.js"></script>
+
+  <!-- 模組載入 -->
+  <script>
+    fetch('../components/nav.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+
+    fetch('../components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+  <script src="assets/js/stars.js"></script>
+</body>
+</html>

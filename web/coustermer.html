@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>客服中心｜Nexelink</title>
+
+  <!-- ✅ 共用樣式 -->
+  <link rel="stylesheet" href="assets/css/common.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <style>
+    .chat-box {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px #00ffff22;
+    }
+
+    .message {
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 15px;
+      max-width: 80%;
+    }
+
+    .bot {
+      background: #00ffff22;
+      color: #00ffff;
+      align-self: flex-start;
+    }
+
+    .user {
+      background: #ffffff22;
+      color: #fff;
+      align-self: flex-end;
+      text-align: right;
+    }
+
+    .chat-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .chat-options button {
+      background-color: #00ffff33;
+      color: white;
+      border: 1px solid #00ffff66;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 星空背景 -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- 導覽列 -->
+  <div id="nav-placeholder"></div>
+
+  <!-- 主內容 -->
+  <main>
+    <section class="float-up">
+      <h1 style="text-align:center;">AI 客服中心</h1>
+      <p style="text-align:center;">歡迎使用 Nexelink 智能客服系統，請選擇您需要的服務。</p>
+    </section>
+
+    <section class="chat-box float-up">
+      <div class="message bot">您好，我是 Nexelink 智能客服 🤖<br>請問您需要什麼協助？</div>
+
+      <div class="chat-options">
+        <button onclick="showResponse('我要報修系統問題')">我要報修系統問題</button>
+        <button onclick="showResponse('了解服務流程')">了解服務流程</button>
+        <button onclick="showResponse('索取報價單')">索取報價單</button>
+        <button onclick="showResponse('聯絡真人客服')">聯絡真人客服</button>
+      </div>
+
+      <div id="chat-response-area"></div>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 共用腳本 -->
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/stars.js"></script>
+
+  <!-- 模組載入 -->
+  <script>
+    fetch('components/nav.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+
+    fetch('components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+
+  <!-- 模擬對話回應 -->
+  <script>
+    function showResponse(text) {
+      const responseArea = document.getElementById('chat-response-area');
+      const user = `<div class="message user">${text}</div>`;
+      let botResponse = "";
+
+      switch (text) {
+        case '我要報修系統問題':
+          botResponse = "請您填寫聯絡表單，我們將儘快安排技術人員處理。";
+          break;
+        case '了解服務流程':
+          botResponse = "您可以前往服務頁面查看五大服務內容與選配方式。";
+          break;
+        case '索取報價單':
+          botResponse = "請前往合作洽談頁面填寫需求，我們將寄出報價單給您。";
+          break;
+        case '聯絡真人客服':
+          botResponse = "請稍後，我們將有真人客服與您聯繫，或撥打 02-1234-5678。";
+          break;
+      }
+
+      const bot = `<div class="message bot">${botResponse}</div>`;
+      responseArea.innerHTML += user + bot;
+    }
+  </script>
+  <script src="assets/js/stars.js"></script>
+</body>
+</html>

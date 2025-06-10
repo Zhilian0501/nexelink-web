@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>法律政策｜Nexelink</title>
+
+  <!-- ✅ 共用樣式 -->
+  <link rel="stylesheet" href="assets/css/common.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <style>
+    .policy-block {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #00ffff33;
+    }
+
+    .policy-block h2 {
+      color: #00ffff;
+      margin-bottom: 10px;
+    }
+
+    .policy-block p {
+      line-height: 1.8;
+      font-size: 15px;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 星空背景 -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- 導覽列 -->
+  <div id="nav-placeholder"></div>
+
+  <!-- 主內容 -->
+  <main>
+    <section class="float-up">
+      <h1 style="text-align:center;">使用條款與法律政策</h1>
+      <p style="text-align:center;">請仔細閱讀以下條款，使用本網站即視為同意本政策。</p>
+    </section>
+
+    <section class="policy-block float-up">
+      <h2>📄 隱私權政策</h2>
+      <p>我們承諾保護使用者的個人資料安全。所有資料將僅用於聯絡、服務與訂單處理用途，未經許可絕不轉售予第三方。您可隨時要求刪除帳戶資料。</p>
+    </section>
+
+    <section class="policy-block float-up">
+      <h2>⚖️ 使用條款</h2>
+      <p>本網站所有內容，包括圖片、文字、影音等，皆為 Nexelink 所有，未經授權不得轉載或使用。使用者不得透過任何方式進行破壞、惡意攻擊或盜用本網站資源。</p>
+    </section>
+
+    <section class="policy-block float-up">
+      <h2>🔁 退換貨與取消服務</h2>
+      <p>由於我們提供為數位設計／開發類型的服務，一經下單即無法取消或退款。如有特殊情況（如系統錯誤／雙重付款），可聯繫客服進行處理。</p>
+    </section>
+
+    <section class="policy-block float-up">
+      <h2>🌐 GDPR 與國際合規性</h2>
+      <p>對於歐盟使用者，我們遵循 GDPR 數據保護規範。使用者擁有資料查詢、修正與刪除的權利，可透過客服窗口申請。</p>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 共用腳本 -->
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/stars.js"></script>
+
+  <!-- 模組載入 -->
+  <script>
+    fetch('components/nav.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+
+    fetch('components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+  <script src="assets/js/stars.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- components/footer.html -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Nexelink. All rights reserved.</p>
+    <p id="visitor-count">Total Visitors: Loading...</p>
+  </div>
+
+<script>
+
+// assets/js/footer.js
+document.addEventListener("DOMContentLoaded", () => {
+  const countElement = document.getElementById("visitor-count");
+  const key = "nexelink-visit-count";
+
+  let visits = localStorage.getItem(key);
+  visits = visits ? parseInt(visits) + 1 : 1;
+  localStorage.setItem(key, visits);
+  countElement.textContent = `Total Visitors: ${visits.toLocaleString()}`;
+});</script>
+<script src="assets/js/stars.js"></script>
+</footer>

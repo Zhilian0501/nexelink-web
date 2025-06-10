@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>聯絡我們｜Nexelink</title>
+
+  <!-- ✅ 共用樣式 -->
+  <link rel="stylesheet" href="assets/css/common.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <style>
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-info {
+      text-align: center;
+      line-height: 1.8;
+    }
+    iframe.map {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 星空背景 -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- 導覽列 -->
+  <div id="nav-placeholder"></div>
+
+  <!-- 主內容 -->
+  <main>
+    <section class="float-up">
+      <h1>聯絡我們</h1>
+      <p style="text-align:center;">若您有任何問題或合作想法，歡迎透過以下方式聯絡我們。</p>
+    </section>
+
+    <section class="contact-info float-up">
+      <p>📍 台北市信義區科技大道 88 號</p>
+      <p>📞 02-1234-5678</p>
+      <p>✉️ service@nexelink.tw</p>
+    </section>
+
+    <section class="float-up contact-form">
+      <form>
+        <label for="name">姓名 *</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">留言內容 *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">送出訊息</button>
+      </form>
+    </section>
+
+    <section class="float-up">
+      <h2 style="text-align:center;">📌 我們的位置</h2>
+      <!-- 可換成 Google Map 嵌入 -->
+      <iframe class="map" src="https://maps.google.com/maps?q=Taipei%20101&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 共用腳本 -->
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/stars.js"></script>
+
+  <!-- 模組載入 -->
+  <script>
+    fetch('components/nav.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+
+    fetch('components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+  <script src="assets/js/stars.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我們｜Nexelink</title>
+
+  <!-- ✅ 共用樣式 -->
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- 星空背景 -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- 導覽列 -->
+  <div id="nav-placeholder"></div>
+
+  <!-- 主內容 -->
+  <main>
+    <section class="float-up">
+      <h1>我們的故事</h1>
+      <p>Nexelink 起源於一個單純的想法——讓科技變得有溫度。</p>
+      <p>從最初的自由接案團隊，到現在成為跨領域整合的創意科技公司，我們始終相信：「創意 × 技術 × 美感 = 價值」。</p>
+    </section>
+
+    <section class="float-up">
+      <h2>我們的理念</h2>
+      <ul>
+        <li>⚙ 整合設計與技術，實現客戶創想</li>
+        <li>🎯 用精準的策略幫助品牌發聲</li>
+        <li>🌐 追求國際級標準，落實在地服務</li>
+      </ul>
+    </section>
+
+    <section class="float-up">
+      <h2>我們的願景</h2>
+      <p>未來，我們將持續拓展服務範圍，結合人工智慧、沉浸式體驗與在地文化，打造具備永續價值的數位生態系。</p>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 共用腳本 -->
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/stars.js"></script>
+
+  <!-- 導入模組 HTML -->
+  <script>
+    fetch('components/nav.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+
+    fetch('components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+  <script src="assets/js/stars.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Body 背景與文字 ---------- */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364); /* 深藍銀河背景 */
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ---------- Section 基本間距 ---------- */
+section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ---------- 滑鼠 Hover 發光效果 ---------- */
+a:hover, button:hover {
+  filter: drop-shadow(0 0 6px #00ffff);
+  transition: 0.3s ease;
+}
+
+/* ---------- 導覽列 ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 20, 30, 0.85);
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: #00ffff;
+}
+
+/* ---------- 漢堡選單 ---------- */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: #111;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 100px;
+}
+
+.site-footer p {
+  margin: 5px 0;
+}
+
+/* ---------- 浮動動畫 (向上浮出) ---------- */
+.float-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.float-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- 基本按鈕樣式 ---------- */
+button {
+  background-color: #00ffff;
+  color: #111;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #00cccc;
+}
+
+/* ---------- 輪播區域 (簡化版，可加強) ---------- */
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.slide {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  animation: fade 8s infinite;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ---------- 銀河特效基礎樣式（如後續要用 canvas 加強） ---------- */
+canvas.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
