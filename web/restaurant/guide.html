@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>老闆操作說明｜NEXELINK 點餐系統</title>
+<meta name="description" content="從第一次設定、每天開店、營業中、結帳到打烊日結，加上常見問題。">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/web/index.html">Nexelink</a>
+  <nav class="crumbs" aria-label="導覽"><a href="index.html">點餐系統說明</a><span>›</span><span>老闆操作說明</span></nav>
+</header>
+<div class="layout">
+  <aside class="toc" aria-label="目錄">
+    <div class="toc__title">目錄</div>
+    <ol><li><a href="#s1">系統的組成</a></li><li><a href="#s2">第一次設定</a></li><li><a href="#s3">每天開店</a></li><li><a href="#s4">營業中</a></li><li><a href="#s5">結帳</a></li><li><a href="#s6">打烊與日結</a></li><li><a href="#s7">管理</a></li><li><a href="#s8">常見問題</a></li></ol>
+    <div class="progress" aria-live="polite"><div class="progress__bar"><span id="bar"></span></div><div id="progress-text">已完成 0 項</div><button type="button" class="reset" id="reset">清除勾選</button></div>
+    <button type="button" class="print" onclick="window.print()">列印這份說明</button>
+  </aside>
+  <main class="doc" id="doc">
+    <h1>老闆操作說明</h1><p>NEXELINK 點餐系統不用安裝 App，用瀏覽器打開就能用。這份說明照一天的營業順序排列，遇到問題可以直接跳到最後的「常見問題」。</p>
+<h2 id="s1">系統的組成</h2>
+<p>一家店由五個畫面組成，各自在不同的裝置上。</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>畫面</th>
+<th>誰在用</th>
+<th>在哪裡打開</th>
+<th>用來做什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>老闆端</td>
+<td>老闆</td>
+<td>手機或電腦，用 Email 登入</td>
+<td>菜單、桌位、員工、報表、設定</td>
+</tr>
+<tr>
+<td>服務生端</td>
+<td>櫃檯、外場</td>
+<td>配對過的平板</td>
+<td>接單、桌位、結帳、候位、售完</td>
+</tr>
+<tr>
+<td>廚房端（KDS）</td>
+<td>廚房</td>
+<td>配對過的平板</td>
+<td>看單、按開始／完成</td>
+</tr>
+<tr>
+<td>叫號螢幕</td>
+<td>門口候位區</td>
+<td>配對過的平板或電視</td>
+<td>顯示叫號與取號 QR Code</td>
+</tr>
+<tr>
+<td>客人點餐頁</td>
+<td>客人</td>
+<td>客人自己的手機掃桌上 QR Code</td>
+<td>點餐、加點、看進度、呼叫服務生</td>
+</tr>
+</tbody>
+</table></div>
+<p>老闆端左下角有「切換到服務生端」「切換到廚房端」，老闆自己也能幫忙接單。平板不用帳號密碼，是用「配對碼」登入的，老闆可以隨時在「裝置」解除。</p>
+<h2 id="s2">第一次設定</h2>
+<p>老闆端「今日總覽」最上方有開店任務清單，照順序做完，進度條滿了就可以開始營業。</p>
+<ol>
+<li><strong>建菜單</strong>：菜單 → 先建「選項群組」（辣度、冰量、加點），再建分類和商品。商品多的話用「Excel 匯入」，下載範本填好上傳即可。</li>
+<li><strong>設桌位</strong>：桌位與 QR Code → 新增桌位（可批次新增 A1～A10），填座位數。</li>
+<li><strong>印桌卡</strong>：同一頁選樣式後列印，或下單壓克力代印。貼上前每張都用手機掃一次確認桌號。</li>
+<li><strong>配對平板</strong>：裝置 → 產生配對碼 → 平板打開網址按「我要新增裝置」輸入。</li>
+<li><strong>設管理密碼</strong>：設定 → 管理密碼。取消已接單的訂單、作廢收款、大額折扣都要用到。</li>
+<li><strong>試點一筆</strong>：用自己的手機掃桌卡點一筆，從接單走到結帳。</li>
+</ol>
+<p><strong>另外建議設定的地方</strong></p>
+<ul>
+<li>設定 → <strong>功能管理</strong>：用開關決定要不要用內用、外帶、候位、呼叫服務生、廚房 KDS、中英雙語菜單。關掉的功能會從畫面上隱藏，資料保留。</li>
+<li>設定 → <strong>營運流程</strong>：付款時機（先付或餐後付）、自動或人工接單、服務費 %、「需要店員開桌後客人才能點餐」、備註字數、出單機紙寬。</li>
+<li>設定 → <strong>外觀</strong>：客人點餐頁的主色、列表或大圖卡、歡迎詞（例如「今日推薦：番茄牛肉麵」）。</li>
+<li><strong>員工</strong>：新增員工與各自的密碼，指定店長。店長可以核准折扣、取消、作廢，不用把管理密碼告訴每個人。</li>
+</ul>
+<h2 id="s3">每天開店</h2>
+<p>開店前花 2 分鐘做這幾件事，營業中就不會漏單。</p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="guide-1"><span>打開服務生端、廚房端平板，各按一下「點一下開始」（這樣提示音才會響）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-2"><span>確認畫面上方是綠色「連線正常」</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-3"><span>有開「服務生端要先登入」：上班的員工輸入自己的密碼登入</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-4"><span>昨天設「售完」的商品記得重新開啟（服務生端或廚房端 → 售完）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-5"><span>上次有按「暫停接單」的話，按「恢復接單」</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-6"><span>有候位：打開叫號螢幕</span></label></li>
+</ul>
+<p>平板系統更新、重開機或瀏覽器被關掉後，都要再按一次「點一下開始」。</p>
+<h2 id="s4">營業中</h2>
+<p><strong>一筆訂單的流程</strong></p>
+<ol>
+<li>客人掃桌上 QR Code 點餐、送出。按「＋」會先跳出商品畫面，可以選加點、寫備註。</li>
+<li>服務生端響鈴，訂單出現在「待確認」，按「接單」或「拒單」。設成自動接單的店，會直接進廚房。</li>
+<li>廚房端按「開始」，做好按「完成」。一筆有很多品項時，可以點品項逐項打勾。</li>
+<li>服務生端按「已送達」。客人手機上的「我的訂單」會跟著更新狀態。</li>
+</ol>
+<p>按錯了？5 分鐘內可以按畫面下方的「復原」。等太久的單會變紅色提醒。</p>
+<p><strong>常用操作</strong></p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>想做的事</th>
+<th>怎麼做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>開桌</td>
+<td>服務生端 → 桌位 → 點空桌 → 選人數 → 開桌</td>
+</tr>
+<tr>
+<td>客人加點</td>
+<td>客人再掃一次 QR Code 就能加點；不開放加點的店由服務生代點</td>
+</tr>
+<tr>
+<td>幫客人點餐</td>
+<td>桌位 → 點桌子 →「代客點餐」；外帶按右上角「外帶點餐」</td>
+</tr>
+<tr>
+<td>某道菜賣完</td>
+<td>服務生端或廚房端 → 售完 → 打開開關，客人就點不到；只影響今天</td>
+</tr>
+<tr>
+<td>客人按「呼叫服務生」</td>
+<td>服務生端上方出現桌號與需求並響鈴，處理完按「完成」</td>
+</tr>
+<tr>
+<td>店裡太忙，先不接新單</td>
+<td>服務生端、廚房端或老闆端按「暫停接單」；已送出的單照常製作，服務生代點不受影響</td>
+</tr>
+<tr>
+<td>取消一筆已接單的訂單</td>
+<td>訂單卡片按「取消」，需要店長或管理密碼</td>
+</tr>
+<tr>
+<td>印廚房單</td>
+<td>訂單卡片上的印表機圖示</td>
+</tr>
+<tr>
+<td>客人用完餐離開</td>
+<td>結帳後桌子變「待清潔」，清完按「標記已清潔」</td>
+</tr>
+</tbody>
+</table></div>
+<p>桌位卡片上的「2 位 · 已用餐 15 分鐘」是這桌的人數和已經坐了多久。</p>
+<p><strong>候位叫號</strong></p>
+<ol>
+<li>客人掃門口的候位立牌，選人數、填手機（可不填），取得號碼。</li>
+<li>服務生端 → 候位，有空桌時按「叫號」；叫號螢幕與客人手機都會提醒。</li>
+<li>客人到了按「入座」；沒來可以「重新叫號」，或標記「過號」。</li>
+</ol>
+<h2 id="s5">結帳</h2>
+<p>服務生端 → 桌位 → 點桌子 →「結帳」。外帶單在訂單卡片上按「收款」。</p>
+<p><strong>一般結帳</strong></p>
+<ol>
+<li>確認左邊的品項與「應收」金額。</li>
+<li>選「現金」或「現場刷卡」。現金可以點快速金額（例如 NT$ 500），系統會算好找零。</li>
+<li>有開發票的店可以填發票號碼。按「確認收款」，可以接著印收據。</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>情況</th>
+<th>怎麼做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打折、招待</td>
+<td>按「折扣」，選打折（95 折、9 折、8 折、全部招待）或折抵金額，選原因。超過店員上限時，需要店長或管理密碼</td>
+</tr>
+<tr>
+<td>幾個人各付各的</td>
+<td>「付款方式」選平均分攤（選幾位）、自訂金額，或依訂單（勾選要付的單）；收完一位會自動算下一位</td>
+</tr>
+<tr>
+<td>客人要換位子</td>
+<td>桌位 → 點桌子 →「換桌／併桌」→ 選空桌；訂單、帳單與廚房單桌號都會跟著改</td>
+</tr>
+<tr>
+<td>兩桌要一起結帳</td>
+<td>同上，選一張用餐中的桌子，兩桌帳單合在一起</td>
+</tr>
+<tr>
+<td>收錯了</td>
+<td>收款紀錄 → 那筆「作廢」→ 選原因，需要店長或管理密碼；這桌會回到未付清，重新結帳即可</td>
+</tr>
+<tr>
+<td>補印收據</td>
+<td>收款紀錄 → 那筆「列印」</td>
+</tr>
+</tbody>
+</table></div>
+<p>分開付款時，要等整桌付清才算進營業額。作廢其中一筆不會影響其他已收的部分，也不會重複收。</p>
+<p>「服務費」由設定 → 營運流程決定，只有內用會收。</p>
+<h2 id="s6">打烊與日結</h2>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="guide-7"><span>確認沒有「尚未結帳」的訂單（日結單最上方會提醒）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-8"><span>桌子都標記已清潔</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-9"><span>打開日結：服務生端 → 日結，或老闆端 → 報表 → 日結</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-10"><span>對現金：收銀機裡的現金（扣掉開店零用金）應該等於「收銀機應有現金」</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-11"><span>看「異常與提醒」：作廢、取消、拒單、折扣各幾筆</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-12"><span>看「收款人員」：每位員工收了多少</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="guide-13"><span>需要紙本的話按「列印日結單」</span></label></li>
+</ul>
+<p>日結單上的營業額只算已付款的訂單，已經扣掉折扣。系統每天凌晨 4 點自動備份，不用另外做。</p>
+<h2 id="s7">管理</h2>
+<p>以下都在老闆端左側選單。</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>選單</th>
+<th>可以做什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>今日總覽</td>
+<td>今天營業額與訂單數、進行中訂單、桌況、待辦提醒（例如平板斷線太久）</td>
+</tr>
+<tr>
+<td>訂單</td>
+<td>查所有訂單，點進去看明細與這筆的操作紀錄</td>
+</tr>
+<tr>
+<td>菜單</td>
+<td>新增、修改商品與選項；拖曳排序；售完與上下架；Excel 匯入；開了雙語時填英文名稱</td>
+</tr>
+<tr>
+<td>桌位與 QR Code</td>
+<td>新增桌位、重新產生 QR Code、列印桌卡、壓克力代印、外帶與候位立牌</td>
+</tr>
+<tr>
+<td>候位</td>
+<td>候位 QR Code、叫號螢幕、候位設定（有開候位才會出現）</td>
+</tr>
+<tr>
+<td>報表</td>
+<td>月、季、年營收、成本與利潤、熱銷商品、日結；可匯出 Excel</td>
+</tr>
+<tr>
+<td>費用</td>
+<td>記錄房租、人事、食材進貨等支出，報表會算進淨利</td>
+</tr>
+<tr>
+<td>裝置</td>
+<td>配對新平板、修改名稱與用途、解除授權（平板遺失時馬上解除）</td>
+</tr>
+<tr>
+<td>員工</td>
+<td>新增員工、換密碼、設店長、設為離職；「服務生端要先登入」與店員折扣上限</td>
+</tr>
+<tr>
+<td>設定</td>
+<td>店家資料、功能管理、營運流程、外觀、管理密碼、方案、登入密碼</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>操作紀錄</strong>：員工頁右上角「看操作紀錄」。可以依員工、類型、日期篩選；「需留意」只看作廢、取消、折扣、拒單，並顯示是誰核准的。</p>
+<p><strong>方案與續約</strong>：設定 → 方案可以看到期日。月費或年費方案到期前 14 天會提醒，取得續約開通碼後在同一頁輸入，會從到期日往後延長。到期後有 7 天寬限期，之後客人點餐與平板會暫停，老闆仍可登入續約。</p>
+<h2 id="s8">常見問題</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>問題</th>
+<th>怎麼處理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新單沒有聲音</td>
+<td>按一下畫面上的「點一下開始」；確認平板沒有靜音或「勿擾」；廚房端右上角「提示音」是開的</td>
+</tr>
+<tr>
+<td>畫面上方出現紅色「連線中斷」</td>
+<td>店裡網路斷了。先用口頭確認新單，網路恢復後會自動補上；客人送單與結帳會自動重試，不會重複</td>
+</tr>
+<tr>
+<td>平板變成配對畫面</td>
+<td>可能被解除授權或瀏覽器資料被清除。老闆端 → 裝置重新產生配對碼再配一次</td>
+</tr>
+<tr>
+<td>平板要輸入員工密碼才能操作</td>
+<td>開了「服務生端要先登入」。員工輸入自己的密碼；忘記的話老闆到「員工」幫他換一組</td>
+</tr>
+<tr>
+<td>忘記管理密碼</td>
+<td>老闆登入 → 設定 → 管理密碼，輸入登入密碼後設一組新的</td>
+</tr>
+<tr>
+<td>忘記老闆登入密碼</td>
+<td>登入頁按「忘記密碼」，用 Email 重設</td>
+</tr>
+<tr>
+<td>客人說掃了沒反應或顯示錯誤</td>
+<td>用自己手機掃同一張桌卡試試；桌卡若重新產生過 QR Code，舊桌卡會失效，要換新的</td>
+</tr>
+<tr>
+<td>客人點餐頁顯示「這桌還沒開桌」</td>
+<td>開了「需要開桌後才能點餐」。服務生端 → 桌位 → 開桌</td>
+</tr>
+<tr>
+<td>客人點餐頁顯示「暫停接單」</td>
+<td>有人按了「暫停接單」。服務生端或廚房端右上角按「恢復接單」</td>
+</tr>
+<tr>
+<td>客人點不到某道菜</td>
+<td>可能設了售完或下架。服務生端 → 售完，或老闆端 → 菜單檢查</td>
+</tr>
+<tr>
+<td>候位手機號碼輸入錯誤</td>
+<td>輸入 09 開頭的 10 碼，+886、橫線、空白系統會自動整理</td>
+</tr>
+<tr>
+<td>商品照片不見了</td>
+<td>通知 NEXELINK 客服；照片會顯示品名第一個字代替，不影響點餐</td>
+</tr>
+<tr>
+<td>畫面提醒「服務即將到期」</td>
+<td>向 NEXELINK 或代理商取得續約開通碼，在設定 → 方案輸入</td>
+</tr>
+</tbody>
+</table></div>
+<p>其他問題請聯絡 NEXELINK 客服，告訴我們店名、發生時間和畫面截圖。</p>
+    <p class="updated">最後更新：2026-10-14</p>
+  </main>
+</div>
+<footer class="foot">© NEXELINK 數位創新團隊 ｜ <a href="mailto:contact@nexelink.tw">contact@nexelink.tw</a></footer>
+<script src="docs.js"></script>
+</body>
+</html>

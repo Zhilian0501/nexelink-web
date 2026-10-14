@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>店家上線檢查清單｜NEXELINK 點餐系統</title>
+<meta name="description" content="到店安裝時照順序打勾：資料準備、開通、菜單與桌卡、平板配對、試跑、教學交接。">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/web/index.html">Nexelink</a>
+  <nav class="crumbs" aria-label="導覽"><a href="index.html">點餐系統說明</a><span>›</span><span>店家上線檢查清單</span></nav>
+</header>
+<div class="layout">
+  <aside class="toc" aria-label="目錄">
+    <div class="toc__title">目錄</div>
+    <ol><li><a href="#s1">出發前準備</a></li><li><a href="#s2">帳號開通與基本設定</a></li><li><a href="#s3">菜單、桌位與 QR Code</a></li><li><a href="#s4">裝置配對與平板設定</a></li><li><a href="#s5">上線前完整試跑一輪</a></li><li><a href="#s6">員工教學與交接</a></li></ol>
+    <div class="progress" aria-live="polite"><div class="progress__bar"><span id="bar"></span></div><div id="progress-text">已完成 0 項</div><button type="button" class="reset" id="reset">清除勾選</button></div>
+    <button type="button" class="print" onclick="window.print()">列印這份清單</button>
+  </aside>
+  <main class="doc" id="doc">
+    <h1>店家上線檢查清單</h1><p>這份清單照實際安裝順序排列，到店裡一項一項打勾。全部完成大約需要 2～3 小時，建議挑非營業時間到店。勾選會保存在這台手機上，換頁回來不會不見。</p>
+<h2 id="s1">出發前準備</h2>
+<p><strong>先跟老闆要的資料</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-1"><span>老闆自己的 Email（要能收信，用來註冊與找回密碼）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-2"><span>店名、電話、地址、統一編號（有的話）、營業時間</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-3"><span>店家 Logo 圖檔（沒有也可以，會先用 NEXELINK Logo）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-4"><span>菜單：品名、售價、分類、加點選項（辣度、冰量等），最好先填進 Excel 範本</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-5"><span>商品照片（選填，可以之後再補）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-6"><span>有外國客人的店：菜單的英文名稱</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-7"><span>桌位清單：桌號與座位數</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-8"><span>營運方式：先付款還是用餐後付款、要不要收服務費、自動或人工接單、有沒有外帶與候位</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-9"><span>員工名單，哪些人是店長</span></label></li>
+</ul>
+<p><strong>要帶去或請店家準備的東西</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-10"><span>開通碼（在平台後台產生，確認方案是對的）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-11"><span>平板：服務生端、廚房端各一台，有候位的加一台叫號螢幕</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-12"><span>平板支架與充電線（廚房的要放在不會被水濺到的地方）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-13"><span>出單機（選配）：確認紙寬 58 mm 或 80 mm，以及平板能不能連上列印</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-14"><span>桌卡或壓克力立牌（可以先從系統印紙本桌卡，之後再代印）</span></label></li>
+</ul>
+<p><strong>店裡的網路</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-15"><span>Wi-Fi 名稱與密碼</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-16"><span>在廚房、櫃台、最遠的桌位各測一次訊號，用手機打開網頁不卡</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-17"><span>客人用自己的 4G/5G 也能點餐，不一定要給客人 Wi-Fi</span></label></li>
+</ul>
+<h2 id="s2">帳號開通與基本設定</h2>
+<p>用老闆的手機或電腦操作，讓老闆自己設密碼。每一步都可以按「回上一步」修改。</p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-18"><span>打開點餐系統網址 →「我是老闆」→ 註冊</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-19"><span>收 Email 驗證碼並輸入</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-20"><span>填店家資料（店名、電話、地址、Logo、營業時間）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-21"><span>選店型（飲料店／小吃／餐廳／咖啡廳），系統會套用建議設定</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-22"><span>輸入開通碼</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-23"><span>讀完並勾選同意服務條款與隱私權政策</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-24"><span>設定 → <strong>功能管理</strong>：只開這家店用得到的（內用、外帶、候位、呼叫服務生、廚房 KDS、中英雙語菜單）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-25"><span>設定 → <strong>營運流程</strong>：付款時機、接單方式、服務費 %、「需要開桌後才能點餐」、出單機紙寬</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-26"><span>設定 → <strong>管理密碼</strong>：4～6 位數字，只給老闆與值班主管知道</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-27"><span>設定 → <strong>外觀</strong>：主色、菜單呈現方式、歡迎詞</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-28"><span><strong>員工</strong>：新增每位員工與密碼，設定店長；決定要不要開「服務生端要先登入」和店員的折扣上限</span></label></li>
+</ul>
+<h2 id="s3">菜單、桌位與 QR Code</h2>
+<p><strong>菜單</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-29"><span>先建選項群組（例如辣度、冰量、甜度、加點），設定必選或選填、加價</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-30"><span>菜單 → Excel 匯入：下載範本、填好、上傳，先看預覽再確認（或一項一項新增）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-31"><span>和老闆一起核對每一項的價格與加點</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-32"><span>用「調整順序」拖曳排好分類與商品順序</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-33"><span>開了雙語菜單：確認「還有 N 項沒有英文名稱」的提示已經消失</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-34"><span>用自己的手機打開客人點餐頁，從頭看一遍菜單</span></label></li>
+</ul>
+<p><strong>桌位與 QR Code</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-35"><span>桌位與 QR Code → 新增桌位（可以批次新增，例如 A1～A10），填座位數</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-36"><span>選桌卡樣式後列印桌卡（或從同一頁下單壓克力代印）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-37"><span><strong>每張桌卡都用手機掃一次</strong>，確認畫面上的桌號和實際桌子一樣，再貼上去</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-38"><span>有外帶：列印外帶點餐立牌，放在櫃台</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-39"><span>有候位：候位 → 列印候位立牌，放在門口；用不同品牌的手機掃描試取一個號</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-40"><span>桌卡遺失或被拍走時：桌位頁按「重新產生 QR Code」，舊的桌卡就會失效</span></label></li>
+</ul>
+<h2 id="s4">裝置配對與平板設定</h2>
+<p>每台平板只要配對一次，之後打開就是對應的畫面。裝置數量有方案上限。</p>
+<p><strong>配對</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-41"><span>老闆端 → 裝置 → 填名稱（例如「櫃檯 iPad」「廚房平板」）、選用途 → 產生配對碼</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-42"><span>在平板打開點餐系統網址 →「我要新增裝置」→ 輸入 6 位數配對碼（或直接掃配對 QR Code）。配對碼 10 分鐘內有效</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-43"><span>服務生端、廚房端、叫號螢幕各配對一台</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-44"><span>在裝置頁確認每台都顯示「連線中」</span></label></li>
+</ul>
+<p><strong>平板本身的設定</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-45"><span>用瀏覽器的「加到主畫面」，之後從桌面圖示打開</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-46"><span>關掉自動鎖定：iPad 是「設定 → 螢幕顯示與亮度 → 自動鎖定 → 永不」；Android 是「螢幕逾時」調到最長</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-47"><span>音量調大，關掉靜音與「勿擾」</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-48"><span>每次開啟後按一下「點一下開始」，提示音才會響、螢幕才會保持常亮</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-49"><span>插上充電線，放上支架</span></label></li>
+</ul>
+<p><strong>出單機（有的話）</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-50"><span>先讓平板能列印到出單機（iPad 用 AirPrint，Android 依出單機廠商的列印服務）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-51"><span>設定 → 營運流程 → 出單機紙寬選 58 或 80 mm</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-52"><span>從服務生端印一張廚房單、一張收據，確認字沒有被切掉</span></label></li>
+</ul>
+<h2 id="s5">上線前完整試跑一輪</h2>
+<p>請老闆或員工當客人，用自己的手機走完下面每一步。全部正常才算可以上線。</p>
+<ol>
+<li>掃桌上 QR Code，選一道有加點的菜，寫備註，送出。</li>
+<li>服務生端響鈴，按「接單」（自動接單的店會直接進廚房）。</li>
+<li>廚房端看得到單和備註，按「開始」、「完成」。</li>
+<li>服務生端按「已送達」；客人手機上「我的訂單」狀態跟著變。</li>
+<li>客人再加點一次；再按「呼叫服務生」，服務生端有響鈴。</li>
+<li>開了雙語：客人點餐頁右上角切換 EN，確認菜名變英文。</li>
+<li>結帳：打一個 9 折（店員登入時應該要店長核准），用「平均分攤」分兩次收，印收據。</li>
+<li>開另一桌點餐，試「換桌」到空桌，再試「併桌」。</li>
+<li>收款紀錄 → 作廢一筆（需要店長或管理密碼），再重新結帳。</li>
+<li>外帶：掃外帶立牌點一筆，在櫃台收款。</li>
+<li>候位：掃候位立牌取號，叫號螢幕叫號、重新叫號，客人手機有提醒。</li>
+<li>在服務生端按「暫停接單」，客人頁面顯示暫停；再按「恢復接單」。</li>
+<li>拔掉 Wi-Fi 幾秒，平板上方出現紅色斷線提示；恢復後自動補上訂單。</li>
+<li>
+<p>日結：看營業額、收款方式、收款人員是否正確。</p>
+</li>
+<li>
+<p>[ ] 以上 14 步全部正常</p>
+</li>
+<li class="task"><label><input type="checkbox" data-key="checklist-53"><span>試跑的訂單都已結帳或取消，桌子都回到「空桌」（試跑金額會算進當天營業額，請老闆知道）</span></label></li>
+</ol>
+<h2 id="s6">員工教學與交接</h2>
+<p><strong>教學（每個角色 10～15 分鐘）</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-54"><span>老闆：今日總覽、菜單與售完、日結與報表、員工與操作紀錄、暫停接單</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-55"><span>店長：核准折扣、取消、作廢；換桌併桌；日結對帳</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-56"><span>服務生：員工登入與換班、開桌、接單、代客點餐、呼叫、結帳與分開付款、清桌</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-57"><span>廚房：開始與完成、按品項打勾、復原（5 分鐘內）、售完、暫停接單</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-58"><span>把「<a href="guide.html">老闆操作說明</a>」的連結傳給老闆</span></label></li>
+</ul>
+<p><strong>交接給老闆的東西</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-59"><span>老闆自己設的登入密碼與管理密碼（我們不要留存）</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-60"><span>點餐系統網址、外帶點餐網址</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-61"><span>NEXELINK 客服聯絡方式</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-62"><span>方案與到期日（月費／年費方案），到期前 14 天系統會提醒</span></label></li>
+</ul>
+<p><strong>上線後追蹤</strong></p>
+<ul class="tasks">
+<li class="task"><label><input type="checkbox" data-key="checklist-63"><span>第一個營業日：尖峰時段到場或電話待命</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-64"><span>第 3 天：在平台後台「營運看板」確認這家店有同步、有訂單</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-65"><span>第 7 天：回訪老闆，記下問題與建議，回報給開發</span></label></li>
+<li class="task"><label><input type="checkbox" data-key="checklist-66"><span>桌卡改成壓克力版：老闆可以從「桌位與 QR Code → 壓克力代印」下單</span></label></li>
+</ul>
+    <p class="updated">最後更新：2026-10-14</p>
+  </main>
+</div>
+<footer class="foot">© NEXELINK 數位創新團隊 ｜ <a href="mailto:contact@nexelink.tw">contact@nexelink.tw</a></footer>
+<script src="docs.js"></script>
+</body>
+</html>
